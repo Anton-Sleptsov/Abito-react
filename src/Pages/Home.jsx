@@ -1,41 +1,24 @@
-import { Header } from "../Components/Header/Header";
+import { useOutletContext } from "react-router-dom";
 import { Card } from "../Components/Card/Card";
 import { Service } from "../Components/Service/Service";
 
-import { cardArray } from "../constants";
 import { serviceArray } from "../constants";
 
 export const Home = () => {
+  const {products} = useOutletContext();
+  
   return (
     <>
-      <Header />
-
-      <main className="main">
-        <section className="search">
-          <div className="container">
-            <div className="search-inner">
-              <input type="text" />
-              <button className="btn btn-prime search-btn">
-                <img
-                  className="search-btn__icon"
-                  src="/images/search.svg"
-                  alt="search"
-                />
-                <span className="search-btn__text">Найти</span>
-              </button>
-            </div>
-          </div>
-        </section>
-
         <section className="content">
           <div className="container">
             <div className="content-inner">
               <div className="content-main">
                 <h2 className="content-main__title">Рекомендации для вас</h2>
                 <div className="content-main__list">
-                  {cardArray.map((card) => (
+                  {products.map((card) => (
                     <Card
                       key={card.id}
+                      id={card.id}
                       title={card.title}
                       price={card.price}
                       address={card.address}
@@ -76,7 +59,6 @@ export const Home = () => {
             </div>
           </div>
         </section>
-      </main>
     </>
   );
 };
