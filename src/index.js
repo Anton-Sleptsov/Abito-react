@@ -1,29 +1,30 @@
+import './index.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import { Home } from './Pages/Home';
-import { Product } from './Pages/Product';
-import { Error } from './Pages/Error';
-import { Layout } from './layouts/Layout';
-
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
+import Layout from './layouts/Layout';
+import HomePage from './Pages/HomePage';
+import ProductPage from './Pages/ProductPage';
+import ErrorPage from './Pages/ErrorPage';
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    errorElement: <Error />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: "/product/:id",
-        element: <Product />,
+        element: <ProductPage />,
       }
     ]
   }

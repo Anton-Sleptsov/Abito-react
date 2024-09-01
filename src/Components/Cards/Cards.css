@@ -1,0 +1,14 @@
+.cards__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+.cards__list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}

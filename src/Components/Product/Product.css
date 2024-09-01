@@ -1,0 +1,38 @@
+.product__left {
+  flex-basis: 50%;
+}
+
+.product__title, .product__price {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+.product__image {
+  width: 100%;
+}
+
+.product__text {
+  color: rgb(10, 20, 58);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.product__right {
+  flex-basis: 50%;
+}
+
+@media (max-width: 991px) {
+  .product__left {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .product__right {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}

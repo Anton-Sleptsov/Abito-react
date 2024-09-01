@@ -1,0 +1,18 @@
+.services__title {
+  color: rgb(10, 20, 58);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  margin-bottom: 23px;
+}
+
+.services__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 25px;
+  border-bottom: 1px solid rgb(229, 229, 229);
+  padding-bottom: 36px;
+  margin-bottom: 36px;
+}

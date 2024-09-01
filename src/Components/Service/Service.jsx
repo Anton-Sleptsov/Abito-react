@@ -1,6 +1,6 @@
 import "./Service.css";
 
-export const Service = ({ title, text, imagePath }) => {
+export default function Service({ title, text, imagePath }) {
   return (
     <div className="service">
       <img className="service-img" src={imagePath} alt="service-img" />
@@ -8,4 +8,4 @@ export const Service = ({ title, text, imagePath }) => {
       <p className="service-text">{text}</p>
     </div>
   );
-};
+}

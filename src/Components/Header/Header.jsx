@@ -1,7 +1,8 @@
 import "./Header.css";
+
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export default function Header() {
   return (
     <header className="header">
       <div className="container">
@@ -21,4 +22,4 @@ export const Header = () => {
       </div>
     </header>
   );
-};
+}

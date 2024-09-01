@@ -1,10 +1,13 @@
-import { Outlet } from "react-router-dom";
-import { Header } from "../Components/Header/Header";
 import { useEffect, useState } from "react";
-import { cardArray } from "../constants";
+import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export const Layout = () => {
+import Header from "../Components/Header/Header";
+import Services from "../Components/Services/Services";
+
+import { cardArray } from "../constants";
+
+export default function Layout() {
   const [searchText, setSearchText] = useState("");
   const [products, setProducts] = useState([]);
 
@@ -15,7 +18,7 @@ export const Layout = () => {
   const handleSearch = () => {
     setProducts(
       cardArray.filter(
-        p =>
+        (p) =>
           p.title.toLowerCase().includes(searchText.toLowerCase()) ||
           p.address.toLowerCase().includes(searchText.toLowerCase())
       )
@@ -39,7 +42,7 @@ export const Layout = () => {
                 onChange={handleSearchText}
               />
               <Link
-              to="/"
+                to="/"
                 className="btn btn-prime search-btn"
                 onClick={handleSearch}
               >
@@ -53,8 +56,17 @@ export const Layout = () => {
             </div>
           </div>
         </section>
-        <Outlet context={{ products }} />
+        <section className="content">
+          <div className="container">
+            <div className="content-inner">
+              <Outlet context={{ products }} />
+              <div className="content-side">
+                <Services />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
-};
+}
